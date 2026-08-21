@@ -143,7 +143,7 @@ const [replaying, setReplaying] = useState(false);
       setError("");
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/multistep/scenarios",
+        "https://agent-guard-ai-sv9r.vercel.app/api/multistep/scenarios",
         {
           headers: {
             Accept: "application/json",
@@ -183,7 +183,7 @@ const [replaying, setReplaying] = useState(false);
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/multistep/run/${scenarioId}`,
+        `https://agent-guard-ai-sv9r.vercel.app/api/multistep/run/${scenarioId}`,
         {
           method: "POST",
           headers: {
@@ -220,7 +220,7 @@ async function runReplay(scenarioId: string) {
 
   try {
     const response = await fetch(
-      `http://127.0.0.1:8000/api/replay/run/${scenarioId}`,
+      `https://agent-guard-ai-sv9r.vercel.app/api/replay/run/${scenarioId}`,
       {
         method: "POST",
         headers: {

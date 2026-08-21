@@ -113,7 +113,7 @@ export default function ReportsPage() {
       setError("");
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/reports/latest",
+        "https://agent-guard-ai-sv9r.vercel.app/api/reports/latest",
         {
           method: "GET",
           headers: {

@@ -320,7 +320,7 @@ export default function Home() {
 
   try {
     const response = await fetch(
-      "http://127.0.0.1:8000/api/evaluation/master",
+      "https://agent-guard-ai-sv9r.vercel.app/api/evaluation/master",
       {
         method: "POST",
         headers: {

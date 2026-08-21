@@ -89,7 +89,7 @@ type MasterResponse = {
 
 const API_BASE =
   process.env.NEXT_PUBLIC_API_URL ||
-  "http://127.0.0.1:8000";
+  "https://agent-guard-ai-sv9r.vercel.app";
 
 const NAV_ITEMS = [
   {
