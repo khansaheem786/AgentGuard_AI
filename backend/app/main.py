@@ -28,8 +28,8 @@ app.add_middleware(
         "http://localhost:3000",
         "http://127.0.0.1:3000",
 
-        # Production frontend
-        "https://agent-guard-ai-eoz.vercel.app",
+       # Production frontend
+"https://frontend-delta-sable.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
