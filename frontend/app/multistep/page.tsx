@@ -143,7 +143,7 @@ const [replaying, setReplaying] = useState(false);
       setError("");
 
       const response = await fetch(
-        "https://agent-guard-ai-sv9r.vercel.app/api/multistep/scenarios",
+        "https://agentguard-ai-9rbc.onrender.com/api/multistep/scenarios",
         {
           headers: {
             Accept: "application/json",
@@ -183,7 +183,7 @@ const [replaying, setReplaying] = useState(false);
 
     try {
       const response = await fetch(
-        `https://agent-guard-ai-sv9r.vercel.app/api/multistep/run/${scenarioId}`,
+        `https://agentguard-ai-9rbc.onrender.com/api/multistep/run/${scenarioId}`,
         {
           method: "POST",
           headers: {
@@ -220,7 +220,7 @@ async function runReplay(scenarioId: string) {
 
   try {
     const response = await fetch(
-      `https://agent-guard-ai-sv9r.vercel.app/api/replay/run/${scenarioId}`,
+      `https://agentguard-ai-9rbc.onrender.com/api/replay/run/${scenarioId}`,
       {
         method: "POST",
         headers: {
@@ -1018,3 +1018,4 @@ function ReplayMetric({
     </div>
   );
 }
+

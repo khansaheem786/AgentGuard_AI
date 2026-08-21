@@ -76,7 +76,7 @@ export default function EvaluationsPage() {
       setError("");
 
       const response = await fetch(
-        "https://agent-guard-ai-sv9r.vercel.app/api/evaluation/master",
+        "https://agentguard-ai-9rbc.onrender.com/api/evaluation/master",
         {
           method: "POST",
           headers: {
@@ -879,3 +879,4 @@ export default function EvaluationsPage() {
     </main>
   );
 }
+

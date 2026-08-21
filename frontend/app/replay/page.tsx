@@ -89,7 +89,7 @@ type MasterResponse = {
 
 const API_BASE =
   process.env.NEXT_PUBLIC_API_URL ||
-  "https://agent-guard-ai-sv9r.vercel.app";
+  "https://agentguard-ai-9rbc.onrender.com";
 
 const NAV_ITEMS = [
   {
@@ -1058,3 +1058,4 @@ export default function DashboardPage() {
     </div>
   );
 }
+
