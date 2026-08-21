@@ -8,7 +8,9 @@ from app.services.replay_engine import ReplayEngine
 from app.services.tool_executor import ToolExecutor
 from app.services.guarded_executor import GuardedExecutor
 from app.services.policy_engine import PolicyEngine
-
+from app.services.replay_executor import (
+    ReplayExecutor,
+)
 
 router = APIRouter(
     prefix="/api/replay",
@@ -30,7 +32,13 @@ runner = MultiStepRunner(
     guarded_executor
 )
 
-replay_engine = ReplayEngine()
+replay_executor = ReplayExecutor(
+    executor=guarded_executor,
+)
+
+replay_engine = ReplayEngine(
+    replay_executor=replay_executor,
+)
 
 
 @router.post("/run/{scenario_id}")
