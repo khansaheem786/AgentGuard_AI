@@ -1,125 +1,167 @@
-# AgentGuard AI
+# 🛡️ AgentGuard AI
 
 ## AI Agent Reliability & Security Evaluation Platform
 
-AgentGuard is an AI-agent security and reliability evaluation platform designed to test whether an AI agent behaves correctly under normal conditions and remains safe when exposed to adversarial, destructive, and multi-step workflows.
+AgentGuard AI is a platform designed to evaluate AI agents for **reliability, security, and safe behavior**.
 
-Instead of evaluating an AI agent only by whether it produces a correct answer, AgentGuard evaluates the complete execution behavior, including tool usage, policy enforcement, multi-step workflows, security violations, execution traces, replay consistency, and failure analysis.
+Modern AI agents can do much more than generate text. They can use tools, access information, perform actions, and execute multi-step workflows.
 
----
+Because of this, simply checking whether an AI agent gives the correct answer is not enough.
 
-## Table of Contents
+AgentGuard evaluates how an AI agent behaves during execution, including:
 
-- [Problem Statement](#problem-statement)
-- [Our Solution](#our-solution)
-- [Key Features](#key-features)
-- [System Architecture](#system-architecture)
-- [Evaluation Pipeline](#evaluation-pipeline)
-- [Functional Evaluation](#functional-evaluation)
-- [Guarded Tool Execution](#guarded-tool-execution)
-- [Adversarial Mutation Testing](#adversarial-mutation-testing)
-- [Multi-Step Security](#multi-step-security)
-- [Cross-Step Context Validation](#cross-step-context-validation)
-- [Sandbox Replay](#sandbox-replay)
-- [Deterministic Replay](#deterministic-replay)
-- [Trace-Based Evidence](#trace-based-evidence)
-- [Failure Analysis](#failure-analysis)
-- [Security Scoring](#security-scoring)
-- [Dashboard](#dashboard)
-- [Technology Stack](#technology-stack)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Running the Backend](#running-the-backend)
-- [Running the Frontend](#running-the-frontend)
-- [Testing](#testing)
-- [API Overview](#api-overview)
-- [Security Methodology](#security-methodology)
-- [Example Workflow](#example-workflow)
-- [Example Replay Result](#example-replay-result)
-- [Current Project Status](#current-project-status)
-- [Future Scope](#future-scope)
-- [Why AgentGuard](#why-agentguard)
-
----
-
-# Problem Statement
-
-Modern AI agents are no longer limited to generating text.
-
-They can:
-
-- Search data
-- Read records
-- Access files
-- Call tools
-- Modify information
-- Execute actions
-- Perform multi-step workflows
-- Trigger potentially destructive operations
-
-This creates a major security and reliability challenge.
-
-An AI agent may appear to work correctly during normal testing while still being vulnerable to:
-
-- Unauthorized tool usage
-- Destructive operations
-- Invalid resource access
-- Unsafe parameters
+- Functional performance
+- Tool usage
+- Security behavior
 - Policy violations
-- Cross-step workflow attacks
-- Resource confusion
-- Unexpected tool behavior
-- Replay inconsistencies
+- Adversarial mutations
+- Multi-step workflows
+- Execution traces
+- Failure analysis
+- Replay consistency
+- Security scoring
+- Evaluation reports
 
-Traditional evaluation often focuses on individual inputs and outputs.
+The goal is simple:
 
-AgentGuard focuses on the **complete execution workflow**.
+> **Test AI agents before you trust them.**
 
 ---
 
-# Our Solution
+# 🚀 Live Prototype
 
-AgentGuard provides a unified evaluation platform that combines functional testing, adversarial mutation testing, policy enforcement, multi-step security validation, execution tracing, failure analysis, and deterministic sandbox replay.
+### 🌐 Live Application
 
-The platform evaluates an AI agent through multiple layers:
+**https://frontend-delta-sable.vercel.app/**
+
+### ⚙️ Backend API
+
+**https://agentguard-ai-9rbc.onrender.com/**
+
+### 📦 GitHub Repository
+
+**https://github.com/khansaheem786/AgentGuard_AI**
+
+### 📚 API Documentation
+
+**https://agentguard-ai-9rbc.onrender.com/docs**
+
+### 🎥 Demo Video
+
+**https://www.youtube.com/watch?v=HSc3lcvnBZE**
+
+---
+
+# 📌 Table of Contents
+
+- [Introduction](#-introduction)
+- [Problem Statement](#-problem-statement)
+- [Prototype](#-prototype)
+- [Our Solution](#-our-solution)
+- [AgentGuard Workflow](#-agentguard-workflow)
+- [How AgentGuard Works](#-how-agentguard-works)
+- [Key Features](#-key-features)
+- [System Architecture](#-system-architecture)
+- [Evaluation Pipeline](#-evaluation-pipeline)
+- [Dashboard](#-dashboard)
+- [Functional Evaluation](#-functional-evaluation)
+- [Security Evaluation](#-security-evaluation)
+- [Mutation Testing](#-mutation-testing)
+- [Multi-Step Security Testing](#-multi-step-security-testing)
+- [Replay](#-replay)
+- [Failure Analysis](#-failure-analysis)
+- [Reports](#-reports)
+- [Technology Stack](#-technology-stack)
+- [Project Structure](#-project-structure)
+- [Installation & Setup](#-installation--setup)
+- [Running the Backend](#-running-the-backend)
+- [Running the Frontend](#-running-the-frontend)
+- [Environment Configuration](#-environment-configuration)
+- [Testing](#-testing)
+- [Production Build](#-production-build)
+- [API Overview](#-api-overview)
+- [Security Methodology](#-security-methodology)
+- [Example Workflow](#-example-workflow)
+- [Current Project Status](#-current-project-status)
+- [Future Scope](#-future-scope)
+- [Why AgentGuard](#-why-agentguard)
+- [Project Links](#-project-links)
+
+---
+
+# 👋 Introduction
+
+AI agents are becoming increasingly capable of performing tasks, using tools, accessing information, and completing multi-step workflows.
+
+However, as agents become more autonomous, it becomes important to understand whether they are not only capable of completing a task, but also **safe, reliable, and consistent while doing it**.
+
+AgentGuard AI was developed to address this challenge.
+
+It provides a platform for evaluating AI-agent behavior through functional testing, security testing, adversarial mutations, multi-step scenarios, execution analysis, replay, and reporting.
+
+The core idea behind AgentGuard is:
+
+> **Test AI agents before you trust them.**
+
+---
+
+# 🎯 Problem Statement
+
+Traditional AI-agent testing often focuses on whether an agent produces the expected output.
+
+However, an autonomous agent can produce the correct output while still:
+
+- Using a tool incorrectly
+- Following an unsafe instruction
+- Performing an unauthorized action
+- Using invalid parameters
+- Violating a security policy
+- Failing during a multi-step workflow
+- Behaving differently when the same scenario is replayed
+
+This creates a gap between **functional correctness** and **safe, reliable behavior**.
+
+The problem we aim to solve is:
+
+> **How can we systematically evaluate an AI agent's reliability and security before it is deployed into a real-world environment?**
+
+AgentGuard addresses this by evaluating the agent's complete execution behavior instead of checking only the final answer.
+
+---
+
+# 🚀 Prototype
+
+AgentGuard AI is implemented as a working web-based prototype with a separate frontend and backend.
+
+The prototype demonstrates how an AI operations agent can be evaluated for reliability and security using a centralized evaluation platform.
+
+For the prototype, **OpsPilot represents the AI operations agent under evaluation**, while AgentGuard acts as the evaluation and security layer around the agent.
+
+## Prototype Flow
 
 ```text
-                         AGENTGUARD
+                         OpsPilot
+                    AI Agent Under Test
                              |
                              v
-                    Scenario Generation
+                       AgentGuard
                              |
              +---------------+---------------+
-             |                               |
-             v                               v
-      Functional Tests              Adversarial Mutations
-             |                               |
+             |               |               |
+             v               v               v
+      Functional        Security        Mutation
+       Testing           Testing         Testing
+             |               |               |
              +---------------+---------------+
                              |
                              v
-                    Guarded Execution
-                             |
-                 +-----------+-----------+
-                 |                       |
-                 v                       v
-            Policy Engine        Context Validation
-                 |                       |
-                 +-----------+-----------+
+                     Multi-Step Testing
                              |
                              v
-                       Trace Evidence
+                    Execution Analysis
                              |
                              v
-                       Failure Analysis
+                         Replay
                              |
                              v
-                       Security Scoring
-                             |
-                             v
-                      Sandbox Replay
-                             |
-                             v
-                   Deterministic Analysis
-                             |
-                             v
-                       Final Reports
+                        Reports
